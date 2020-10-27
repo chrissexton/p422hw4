@@ -1,0 +1,83 @@
+= Assignment 4: A website with Angular
+
+In this assignment, we will create a simple static web application with Angular.
+
+It is not critical to style the page for this assignment. If you would like to make yours look good, I recommend checking out https://ng-bootstrap.github.io/#/home[ng-bootstrap]
+
+== Data Structure
+
+You should create a plain TypeScript class to represent our data values. It will need to have properties with correct types (mostly `string`) to represent the following:
+
+* title
+* section
+* description
+* bookInfo
+* meetingTime
+* gradingScale
+* calendar
+* universityInfo
+
+`calendar` should be an array of Calendar objects (You may create and export a Calendar class in the same file). Each object should have keys for a date (just use a string), a description, and notesLink.
+
+`gradingScale` should also be an array of objects, each with a percentageRange key and a letterGrade key.
+
+== Data storage
+
+Create a file that exports a single const array of the Course objects created in the previous section as a data source.
+
+You should create at least three courses in this data file.
+
+== Components
+
+Use `ng generate component <name>` to create new components as necessary.
+
+At a minimum, we will have the following components:
+
+=== syllabus
+
+Syllabus will be a wrapper component on the following components. It will provide the data that the other components need to operate.
+
+You should have a list of course names in this component. Each course name should be clickable to display the details of that course below the list.
+
+=== syllabus-info
+
+We will display the following information here:
+
+* Course title
+* Course section number
+* Course description
+* Book information
+* Meeting times
+* Grading scale
+
+=== calendar
+
+For every entry in the calendar array, display in a table:
+
+* The date field
+* The description of what's happening
+* A link to relevant notes
+
+=== university-info
+
+This will just be a big blob of text required by the university on every syllabus given by the universityInfo key of the course object. (You can use the general info text from our syllabus for this.)
+
+== Gigantic Hint
+
+The Angular Tour of Heroes demo is not dissimilar from this assignment. Perhaps try it out first: https://angular.io/tutorial/[Tour of Heroes]. The demo we did in class for link:../notes/16.html[16] also reflects these ideas.
+
+== Rubric
+
+* [4] Data
+** [2] definition class exists
+** [2] sample data exists for three classes
+* [16] Components
+** [4] syllabus exists and lists a set of courses
+** [4] syllabus-info shows data for each class
+** [4] calendar is formatted well and shows events
+** [4] university-info shows text of general info
+
+== Turn in
+
+* Remove your `node_modules` directory
+* Attach to the assignment 4 box in Canvas
